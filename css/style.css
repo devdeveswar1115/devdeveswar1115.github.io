@@ -1,0 +1,271 @@
+
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+            
+        /* ================= ROOT VARIABLES ================= */
+            
+        :root{
+            --accent:#3b82f6;
+            --accent-glow:rgba(59,130,246,0.5);
+        
+            --bg-dark:#030712;
+            --card-dark:#111827;
+        
+            --bg-light:#ffffff;
+            --card-light:#ffffff;
+        }
+        
+        /* ================= GLOBAL ================= */
+        
+        body{
+            font-family:'Inter',sans-serif;
+            background:var(--bg-dark);
+            color:#f3f4f6;
+            scroll-behavior:smooth;
+            -webkit-font-smoothing:antialiased;
+        }
+        
+        section{
+            position:relative;
+        }
+        
+        /* ================= NAVBAR ================= */
+        
+        nav{
+            background:rgba(17,24,39,0.7);
+            backdrop-filter:blur(12px);
+        }
+        
+        /* ================= HERO SECTION ================= */
+        
+        #about{
+            background:#030712; /* keep dark for Vanta HALO */
+        }
+        
+        .hero-text{
+            color:#9ca3af;
+        }
+        
+        /* ================= GLASS EFFECT ================= */
+        
+        .glass{
+            background:rgba(17,24,39,0.7);
+            backdrop-filter:blur(12px);
+            border:1px solid rgba(255,255,255,0.1);
+        }
+        
+        /* ================= CARD HOVER ================= */
+        
+        .card-hover{
+            transition:all .3s cubic-bezier(.4,0,.2,1);
+        }
+        
+        .card-hover:hover{
+            transform:translateY(-5px);
+            border-color:var(--accent);
+            box-shadow:0 10px 30px -10px var(--accent-glow);
+        }
+        
+        /* ================= SKILL TAG ================= */
+        
+        .skill-tag{
+            background:rgba(59,130,246,0.1);
+            border:1px solid rgba(59,130,246,0.2);
+            transition:all .2s;
+        }
+        
+        .skill-tag:hover{
+            background:var(--accent);
+            color:white;
+        }
+        
+        /* ================= SCROLL REVEAL ================= */
+        
+        .reveal{
+            opacity:0;
+            transform:translateY(20px);
+            transition:all .8s ease-out;
+        }
+        
+        .reveal.active{
+            opacity:1;
+            transform:translateY(0);
+        }
+        
+        /* ================= NAV LINK ACTIVE ================= */
+        
+        .nav-link.active{
+            color:var(--accent);
+            text-shadow:0 0 8px var(--accent-glow);
+            font-weight:600;
+        }
+        
+        /* ================= PUBLICATION TAG ================= */
+        
+        .pub-tag{
+            font-size:.65rem;
+            letter-spacing:.05em;
+            background:rgba(59,130,246,0.1);
+            color:#60a5fa;
+            padding:2px 8px;
+            border-radius:4px;
+            border:1px solid rgba(59,130,246,0.3);
+        }
+        
+        /* ================= FOOTER ================= */
+        
+        .site-footer{
+            border-top:1px solid rgba(255,255,255,0.1);
+            padding:1.5rem 0;
+            font-size:.7rem;
+            color:rgba(156,163,175,.8);
+            line-height:1.6;
+        }
+        
+        .footer-info-block{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            text-align:center;
+        }
+        
+        .footer-container{
+            display:block;
+        }
+        
+        /* ================= LIGHT MODE ================= */
+        
+        body.light{
+            background:var(--bg-light);
+            color:#111827;
+        }
+        
+        /* navbar */
+        
+        body.light nav{
+            background:rgba(255,255,255,.9);
+        }
+        
+        /* glass cards */
+        
+        body.light .glass{
+        background: rgba(255,255,255,0.6);
+        backdrop-filter: blur(12px);
+        border:1px solid rgba(0,0,0,0.08);
+        }
+        
+        /* text colors */
+        
+        body.light .text-gray-300,
+        body.light .text-gray-400{
+            color:#374151;
+        }
+        
+        body.light h3{
+            color:#111827;
+        }
+        
+        /* sections */
+        
+        body.light #experience,
+        body.light #projects{
+            background:#ffffff;
+        }
+        
+        body.light #publications,
+        body.light #contact{
+            background:#f3f4f6;
+        }
+        body.light #about{
+        background:radial-gradient(circle at center,#1e40af44 0%,#030712 60%);    
+        }
+        /* hero text */
+        
+        body.light .hero-text{
+            color:#374151;
+        }
+        
+        /* form */
+        
+        body.light input,
+        body.light textarea{
+            background:#ffffff;
+            border:1px solid #d1d5db;
+            color:#111827;
+        }
+        
+        /* footer */
+        
+        body.light footer{
+            background:#ffffff;
+            color:#374151;
+        }
+        
+        /* icons */
+        
+        body.light .glass i{
+            color:#1f2937;
+        }
+        
+        /* ================= RESPONSIVE ================= */
+        
+        /* Tablets */
+        
+        @media (max-width:1024px){
+        
+            nav{
+                padding-left:1.5rem;
+                padding-right:1.5rem;
+            }
+        
+            h1{
+                font-size:3rem;
+            }
+        
+        }
+        
+        /* Mobile */
+        
+        @media (max-width:640px){
+        
+            h1{
+                font-size:2.5rem!important;
+            }
+        
+            .hero-text{
+                font-size:1rem!important;
+            }
+        
+            section{
+                padding-top:4rem;
+                padding-bottom:4rem;
+            }
+        
+            nav{
+                padding-left:1rem;
+                padding-right:1rem;
+            }
+        
+            .footer-container{
+                text-align:center;
+            }
+        
+        }
+        
+        /* Large screens */
+        
+        @media (min-width:1024px){
+        
+            .footer-container{
+                display:grid;
+                grid-template-columns:1fr auto 1fr;
+                align-items:center;
+            }
+        
+            .footer-info-block{
+                align-items:flex-end;
+                text-align:right;
+            }
+        
+        }
+        
